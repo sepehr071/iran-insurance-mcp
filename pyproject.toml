@@ -1,6 +1,6 @@
 [project]
 name = "iran-insurance-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "Unofficial read-only MCP server for Iranian insurance marketplaces BimeBazar and Azki: side-by-side insurers, travel prices, car quotes, guides."
 readme = "README.md"
 license = "MIT"
