@@ -1,0 +1,82 @@
+{
+ "messageCode": 200,
+ "result": [
+  {
+   "id": 1,
+   "code": "041",
+   "name": "آذربایجان شرقی",
+   "capital": "تبريز",
+   "cities": [
+    {
+     "id": 1,
+     "name": "تبریز",
+     "provinceId": 1
+    },
+    {
+     "id": 3,
+     "name": "بندر شرفخانه",
+     "provinceId": 1
+    },
+    {
+     "id": 4,
+     "name": "مراغه",
+     "provinceId": 1
+    },
+    {
+     "id": 5,
+     "name": "میانه",
+     "provinceId": 1
+    },
+    {
+     "id": 6,
+     "name": "شبستر",
+     "provinceId": 1
+    },
+    {
+     "id": 7,
+     "name": "مرند",
+     "provinceId": 1
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "code": "021",
+   "name": "تهران",
+   "capital": "تهران",
+   "cities": [
+    {
+     "id": 117,
+     "name": "تهران",
+     "provinceId": 8
+    },
+    {
+     "id": 118,
+     "name": "ورامین",
+     "provinceId": 8
+    },
+    {
+     "id": 119,
+     "name": "فیروزکوه",
+     "provinceId": 8
+    },
+    {
+     "id": 121,
+     "name": "دماوند",
+     "provinceId": 8
+    },
+    {
+     "id": 122,
+     "name": "اسلامشهر",
+     "provinceId": 8
+    },
+    {
+     "id": 123,
+     "name": "رودهن",
+     "provinceId": 8
+    }
+   ]
+  }
+ ],
+ "success": true
+}

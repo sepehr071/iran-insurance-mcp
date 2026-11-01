@@ -1,0 +1,11 @@
+{
+ "providerId": 3,
+ "provider": "Khodro45",
+ "estimate": {
+  "latestAveragePrice": 1683000000,
+  "latestLowerPrice": 1632000000,
+  "latestUpperPrice": 1733000000,
+  "lastYearPrice": null,
+  "priceZero": null
+ }
+}

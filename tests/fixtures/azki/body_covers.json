@@ -1,0 +1,80 @@
+[
+ {
+  "name": "accessoryRobberyCoverID",
+  "title": "سرقت درجای لوازم و قطعات",
+  "description": "جبران خسارت ناشی از سرقت درجای لوازم و قطعات فابریک و غیرفابریک خودرو (مانند ضبط، بلندگو، باتری و...)",
+  "info": "این پوشش برای خودروهای دارای لوازم غیر فابریک اجباری است.",
+  "availableChoices": [
+   {
+    "id": 1,
+    "title": "تا ۵ درصد و کمتر",
+    "longTitle": "تا ۵ درصد ارزش خودرو و کمتر",
+    "disabled": false
+   },
+   {
+    "id": 2,
+    "title": "تا ۱۰ درصد",
+    "longTitle": "تا ۱۰ درصد ارزش خودرو",
+    "disabled": false
+   },
+   {
+    "id": 4,
+    "title": "تا ۲۰ درصد",
+    "longTitle": "تا ۲۰ درصد ارزش خودرو",
+    "disabled": true
+   }
+  ],
+  "hideInWithoutInspection": true,
+  "disabled": false,
+  "default": false
+ },
+ {
+  "name": "marketFluctuateCoverID",
+  "title": "نوسانات ارزش بازار",
+  "description": "افزایش میزان خسارت پرداختی توسط شرکت بیمه، متناسب با تغییرات قیمت روز خودرو",
+  "info": null,
+  "availableChoices": [
+   {
+    "id": 1,
+    "title": "تا ۲۵ درصد",
+    "longTitle": "تا ۲۵ درصد ارزش خودرو",
+    "disabled": false
+   },
+   {
+    "id": 2,
+    "title": "تا ۵۰ درصد",
+    "longTitle": "تا ۵۰ درصد ارزش خودرو",
+    "disabled": false
+   },
+   {
+    "id": 3,
+    "title": "تا ۱۰۰ درصد",
+    "longTitle": "تا ۱۰۰ درصد ارزش خودرو",
+    "disabled": false
+   }
+  ],
+  "hideInWithoutInspection": true,
+  "disabled": false,
+  "default": false
+ },
+ {
+  "name": "naturalDisaster",
+  "title": "حوادث طبیعی",
+  "description": "جبران خسارت ناشی از حوادث طبیعی (مانند سیل، زلزله و...)",
+  "info": null,
+  "availableChoices": [],
+  "hideInWithoutInspection": true,
+  "disabled": false,
+  "default": false
+ },
+ {
+  "name": "acidicSpray",
+  "title": "پاشیدن مواد شیمیایی",
+  "description": "جبران خسارت‌های ناشی از پاشیدن مواد شیمیایی (مانند اسید، رنگ و...) بر روی بدنه خودرو",
+  "info": null,
+  "availableChoices": [],
+  "hideInWithoutInspection": true,
+  "disabled": false,
+  "default": false
+ }
+]

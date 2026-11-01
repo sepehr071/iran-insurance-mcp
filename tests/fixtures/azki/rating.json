@@ -1,0 +1,22 @@
+[
+ {
+  "id": 3,
+  "companyName": "آسیا",
+  "totalReviews": 2192,
+  "rate": 4.25,
+  "premiumAmountRate": 4.29,
+  "insuranceCoverageRate": 4.32,
+  "supportRate": 3.8,
+  "amountDamageRate": 3.68
+ },
+ {
+  "id": 1,
+  "companyName": "البرز",
+  "totalReviews": 670,
+  "rate": 4.14,
+  "premiumAmountRate": 4.2,
+  "insuranceCoverageRate": 4.21,
+  "supportRate": 3.15,
+  "amountDamageRate": 2.98
+ }
+]

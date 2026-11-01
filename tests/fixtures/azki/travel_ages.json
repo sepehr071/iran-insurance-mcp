@@ -1,0 +1,8 @@
+[
+ {"id": 2, "title": "13 تا 65 سال", "endAge": 65, "startAge": 13},
+ {"id": 1, "title": "0-12", "endAge": 12, "startAge": 0},
+ {"id": 3, "title": "66 تا 70 سال", "endAge": 70, "startAge": 66},
+ {"id": 4, "title": "71 تا 75 سال", "endAge": 75, "startAge": 71},
+ {"id": 5, "title": "76 تا 80 سال", "endAge": 80, "startAge": 76},
+ {"id": 6, "title": "81 تا 85 سال", "endAge": 85, "startAge": 81}
+]

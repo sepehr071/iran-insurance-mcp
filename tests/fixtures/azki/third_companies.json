@@ -1,0 +1,293 @@
+[
+ {
+  "id": 1,
+  "title": "البرز",
+  "satisfaction": 19.0,
+  "wealthLevel": 5.0,
+  "complaintResponseTime": 11.0,
+  "branchNumber": 68,
+  "enable": true,
+  "marketerEnable": true,
+  "available": true,
+  "maxBranchDiscount": 0,
+  "branchDiscountPercent": 0.0,
+  "maxCompanyDiscount": 0,
+  "companyDiscountPercent": 0.0,
+  "maxBimitoDiscount": 5000000,
+  "bimitoDiscountPercent": 0.06,
+  "maxMarketerDiscount": 0,
+  "marketerDiscountPercent": 0.0,
+  "bimitoDiscountTitle": "",
+  "azkiDiscountTitle": "",
+  "hideDiscount": false,
+  "description": "با خرید از شرکت بیمه البرز، از خدمات پرداخت خسارت آنلاین بیمیتو بهره‌مند شوید.",
+  "productDescription": "2.5% | 2.5% روی اقساط اعمال نمیشه | محاسبه متفاوت کوتاه مدت خسارت دار | اقساط: 50% نقد، دو چک یک ماه و سه ماه بعد | تاکسی، کوتاه | بارکش، کوتاه",
+  "giftTitle": "",
+  "hasGift": false,
+  "onlineDamage": true,
+  "features": [
+   {
+    "icon": "POSITIVE",
+    "title": "پرداخت خسارت سیار (تمامی شهر‌ها)",
+    "newRelease": false,
+    "description": "کارشناسان شرکت بیمه به محل تصادف میان و بعد از ارزیابی خسارت در صورتی که خسارت شما تا سقف مشخصی باشه خسارت شما رو پرداخت میکنن. کارشناسی توسط شرکت ارزیاب خسارت سامان نگار یا محک خسارت انجام میشه."
+   }
+  ],
+  "dynamicBadges": [],
+  "businessProperties": [],
+  "installments": [
+   {
+    "enable": false,
+    "enableForSellers": false,
+    "underInstallmentLimitPrice": false,
+    "installments": [
+     {
+      "percent": 0.3,
+      "month": 0
+     },
+     {
+      "percent": 0.11666667,
+      "month": 1
+     },
+     {
+      "percent": 0.11666667,
+      "month": 2
+     },
+     {
+      "percent": 0.11666667,
+      "month": 3
+     },
+     {
+      "percent": 0.11666667,
+      "month": 4
+     },
+     {
+      "percent": 0.11666667,
+      "month": 5
+     },
+     {
+      "percent": 0.11666667,
+      "month": 6
+     }
+    ],
+    "title": "در 6 قسط",
+    "label": "در ۶ قسط",
+    "description": "",
+    "credit": false,
+    "operationCostType": "FIXED",
+    "operationCost": 616000.0,
+    "operationCostInInstallment": false,
+    "installmentId": "a5483d97-a103-4862-a1b4-cfda3cd23a51",
+    "scopes": [],
+    "type": 4,
+    "default": false
+   },
+   {
+    "enable": true,
+    "enableForSellers": false,
+    "underInstallmentLimitPrice": false,
+    "installments": [
+     {
+      "percent": 0.0,
+      "month": 0
+     },
+     {
+      "percent": 0.25,
+      "month": 1
+     },
+     {
+      "percent": 0.25,
+      "month": 2
+     },
+     {
+      "percent": 0.25,
+      "month": 3
+     },
+     {
+      "percent": 0.25,
+      "month": 4
+     }
+    ],
+    "title": "در 4 قسط",
+    "label": "در 4 قسط",
+    "description": "",
+    "credit": false,
+    "operationCostType": "FIXED",
+    "operationCost": 616000.0,
+    "operationCostInInstallment": true,
+    "installmentId": "00774355-2e40-4466-9c79-13b7db723365",
+    "scopes": [],
+    "type": 5,
+    "default": false
+   },
+   {
+    "enable": true,
+    "enableForSellers": false,
+    "underInstallmentLimitPrice": false,
+    "installments": [
+     {
+      "percent": 0.3,
+      "month": 0
+     },
+     {
+      "percent": 0.14,
+      "month": 1
+     },
+     {
+      "percent": 0.14,
+      "month": 2
+     },
+     {
+      "percent": 0.14,
+      "month": 3
+     },
+     {
+      "percent": 0.14,
+      "month": 4
+     },
+     {
+      "percent": 0.14,
+      "month": 5
+     }
+    ],
+    "title": "در 5 قسط",
+    "label": "در 5 قسط",
+    "description": "",
+    "credit": false,
+    "operationCostType": "FIXED",
+    "operationCost": 616000.0,
+    "operationCostInInstallment": false,
+    "installmentId": "a09f89f5-415d-4016-8b69-7427a6300c82",
+    "scopes": [],
+    "type": 4,
+    "default": false
+   }
+  ],
+  "icon": "https://bimito.com/file/public/HC/InsureCompany/1.png",
+  "helpIcons": [
+   {
+    "title": "ThirdDiscountIcon",
+    "url": "https://bimito.com/file/public/HC/InsureCompany/1/Help/Third/1.jpg"
+   },
+   {
+    "title": "DriverDiscountIcon",
+    "url": "https://bimito.com/file/public/HC/InsureCompany/1/Help/Third/2.jpg"
+   }
+  ],
+  "companyFloat": 0.0,
+  "companyCommission": 0.077,
+  "azkiLoanCredit": {
+   "creditEnabled": false,
+   "cashCreditWeight": 0,
+   "installmentCreditWeight": 0
+  },
+  "oldVehicleAge": 15,
+  "oldVehiclePercent": 0.02,
+  "oldVehiclePenaltyPercent": 0.02,
+  "extraPercent": 0.025,
+  "extraPenaltyPercent": 0.0,
+  "damagedShortTermEnable": false,
+  "maxDayOfPenalty": 365,
+  "forgivenessDescription": "با خرید بیمه‌نامه یکساله از تاریخ ۲ شهریور تا ۱۳ شهریور، جریمه دیرکرد شما بخشیده می‌شود.",
+  "enableExpireDatePayment": false,
+  "shortPenaltyForgiveness": false,
+  "longPenaltyForgiveness": false,
+  "cashPayment": false,
+  "azkiPenaltyDiscountEnable": false,
+  "maxAzkiPenaltyDiscount": 0,
+  "enableAddendum": true,
+  "freeZoneEnabled": true
+ },
+ {
+  "id": 3,
+  "title": "آسیا",
+  "satisfaction": 3.0,
+  "wealthLevel": 5.0,
+  "complaintResponseTime": 6.0,
+  "branchNumber": 105,
+  "enable": true,
+  "marketerEnable": true,
+  "available": true,
+  "maxBranchDiscount": 0,
+  "branchDiscountPercent": 0.0,
+  "maxCompanyDiscount": 0,
+  "companyDiscountPercent": 0.0,
+  "maxBimitoDiscount": 0,
+  "bimitoDiscountPercent": 0.0,
+  "maxMarketerDiscount": 0,
+  "marketerDiscountPercent": 0.0,
+  "bimitoDiscountTitle": "",
+  "azkiDiscountTitle": "",
+  "hideDiscount": false,
+  "description": "با خرید از شرکت بیمه آسیا، از خدمات پرداخت خسارت آنلاین ازکی در تهران بهره‌مند شوید.",
+  "productDescription": "2.5 % | محاسبه متفاوت کوتاه مدت خسارت دار | کهنگی روی جریمه دیرکرد | تاکسی | بارکش",
+  "giftTitle": "بیمه آتش سوزی رایگان (با سقف تعهد ۴۰ میلیون تومان) ",
+  "hasGift": false,
+  "onlineDamage": false,
+  "features": [],
+  "dynamicBadges": [],
+  "businessProperties": [],
+  "installments": [
+   {
+    "enable": false,
+    "enableForSellers": false,
+    "underInstallmentLimitPrice": false,
+    "installments": [
+     {
+      "percent": 0.0,
+      "month": 0
+     },
+     {
+      "percent": 1.0,
+      "month": 1
+     }
+    ],
+    "title": "در 1 قسط",
+    "label": "در 1 قسط",
+    "description": "",
+    "credit": false,
+    "operationCostType": "FIXED",
+    "operationCost": 616000.0,
+    "operationCostInInstallment": false,
+    "installmentId": "ce3dc340-5239-4513-b0c7-95dfcb241425",
+    "scopes": [],
+    "type": 4,
+    "default": false
+   }
+  ],
+  "icon": "https://bimito.com/file/public/HC/InsureCompany/3.png",
+  "helpIcons": [
+   {
+    "title": "ThirdDiscountIcon",
+    "url": "https://bimito.com/file/public/HC/InsureCompany/3/Help/Third/1.jpg"
+   },
+   {
+    "title": "DriverDiscountIcon",
+    "url": "https://bimito.com/file/public/HC/InsureCompany/3/Help/Third/2.jpg"
+   }
+  ],
+  "companyFloat": 0.0,
+  "companyCommission": 0.0,
+  "azkiLoanCredit": {
+   "creditEnabled": false,
+   "cashCreditWeight": 0,
+   "installmentCreditWeight": 0
+  },
+  "oldVehicleAge": 15,
+  "oldVehiclePercent": 0.02,
+  "oldVehiclePenaltyPercent": 0.02,
+  "extraPercent": 0.025,
+  "extraPenaltyPercent": 0.025,
+  "damagedShortTermEnable": false,
+  "maxDayOfPenalty": 365,
+  "forgivenessDescription": "با خرید بیمه‌نامه یکساله از تاریخ ۲ شهریور تا ۱۳ شهریور، جریمه دیرکرد شما بخشیده می‌شود.",
+  "enableExpireDatePayment": false,
+  "shortPenaltyForgiveness": false,
+  "longPenaltyForgiveness": false,
+  "cashPayment": false,
+  "azkiPenaltyDiscountEnable": false,
+  "maxAzkiPenaltyDiscount": 0,
+  "enableAddendum": true,
+  "freeZoneEnabled": true
+ }
+]

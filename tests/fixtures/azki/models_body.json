@@ -1,0 +1,160 @@
+[
+ {
+  "id": 1,
+  "title": "سواری",
+  "categoryTitle": "تیپ",
+  "usages": [
+   {
+    "id": 1,
+    "title": "شخصی"
+   },
+   {
+    "id": 4,
+    "title": "تاکسی درون شهری"
+   },
+   {
+    "id": 5,
+    "title": "تاکسی برون شهری"
+   }
+  ],
+  "brands": [
+   {
+    "id": 82,
+    "title": "فوتون",
+    "latinTitle": "foton",
+    "priority": 0,
+    "icon": "https://bimito.com/file/public/HC/CarType/82.png",
+    "models": [
+     {
+      "id": 806661,
+      "title": "ساوانا",
+      "priority": 0,
+      "imported": true
+     }
+    ]
+   },
+   {
+    "id": 18,
+    "title": "پژو  ",
+    "latinTitle": "Peugeot",
+    "priority": 14,
+    "icon": "https://bimito.com/file/public/HC/CarType/18.png",
+    "models": [
+     {
+      "id": 182041,
+      "title": "206",
+      "priority": 10,
+      "imported": false
+     },
+     {
+      "id": 182091,
+      "title": "206تیپ2",
+      "priority": 14,
+      "imported": false
+     }
+    ]
+   },
+   {
+    "id": 43,
+    "title": "سمند  ",
+    "latinTitle": "Samand",
+    "priority": 12,
+    "icon": "https://bimito.com/file/public/HC/CarType/43.png",
+    "models": [
+     {
+      "id": 434061,
+      "title": "EL",
+      "priority": 7,
+      "imported": false
+     },
+     {
+      "id": 434071,
+      "title": "LX",
+      "priority": 12,
+      "imported": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "title": "وانت",
+  "categoryTitle": "تناژ",
+  "usages": [
+   {
+    "id": 2,
+    "title": "بارکش"
+   },
+   {
+    "id": 3,
+    "title": "تاکسی بار"
+   }
+  ],
+  "brands": [
+   {
+    "id": 82,
+    "title": "فوتون",
+    "latinTitle": "foton",
+    "priority": 0,
+    "icon": "https://bimito.com/file/public/HC/CarType/82.png",
+    "models": [
+     {
+      "id": 806649,
+      "title": "بیش از 1 تن تا 3 تن",
+      "priority": 0,
+      "imported": true
+     },
+     {
+      "id": 806946,
+      "title": "بارکش تا 1 تن",
+      "priority": 0,
+      "imported": true
+     }
+    ]
+   },
+   {
+    "id": 6,
+    "title": "ایسوزو  ",
+    "latinTitle": "Isuzu",
+    "priority": 0,
+    "icon": "https://bimito.com/file/public/HC/CarType/6.png",
+    "models": [
+     {
+      "id": 66542,
+      "title": "بیش از 1 تن تا 3 تن",
+      "priority": 0,
+      "imported": true
+     },
+     {
+      "id": 66572,
+      "title": "وانت 1 تن",
+      "priority": 0,
+      "imported": true
+     }
+    ]
+   },
+   {
+    "id": 18,
+    "title": "پژو  ",
+    "latinTitle": "Peugeot",
+    "priority": 14,
+    "icon": "https://bimito.com/file/public/HC/CarType/18.png",
+    "models": [
+     {
+      "id": 182041,
+      "title": "206",
+      "priority": 10,
+      "imported": false
+     },
+     {
+      "id": 182091,
+      "title": "206تیپ2",
+      "priority": 14,
+      "imported": false
+     }
+    ]
+   }
+  ]
+ }
+]

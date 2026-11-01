@@ -1,0 +1,6 @@
+[
+ {"id": 1, "title": "1 تا 7 روز", "durationOfStay": 7},
+ {"id": 2, "title": "8 تا 15 روز", "durationOfStay": 15},
+ {"id": 3, "title": "16 تا 23 روز", "durationOfStay": 23},
+ {"id": 9, "title": "یک سال", "durationOfStay": 365}
+]

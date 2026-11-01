@@ -1,0 +1,27 @@
+[
+ {
+  "discountId": 9,
+  "title": "فاقد بیمه بدنه (0 درصد)",
+  "percent": 0
+ },
+ {
+  "discountId": 11,
+  "title": "صفرسال (0 درصد)",
+  "percent": 0
+ },
+ {
+  "discountId": 10,
+  "title": "در مدت بیمه نامه فعلی خسارت گرفته ام (0 درصد)",
+  "percent": 0
+ },
+ {
+  "discountId": 1,
+  "title": "یک سال (30 درصد)",
+  "percent": 30
+ },
+ {
+  "discountId": 2,
+  "title": "دو سال (40 درصد)",
+  "percent": 40
+ }
+]

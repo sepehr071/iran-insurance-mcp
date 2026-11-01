@@ -1,0 +1,130 @@
+{
+ "requestId": "33ea6e54-e349-445a-a899-af05b18f1178",
+ "requestStatus": "PENDING",
+ "responses": [
+  {
+   "title": "ایران",
+   "companyId": 7,
+   "icon": "https://bimito.com/file/public/HC/InsureCompany/7.png",
+   "discountTitle": "",
+   "complaint": 0.9,
+   "wealthLevel": 0.0,
+   "branchNumber": 2,
+   "satisfaction": 0.0,
+   "installments": [
+    {
+     "month": 0,
+     "percent": 0.0
+    }
+   ],
+   "prices": [
+    {
+     "covers": [],
+     "coverTotalPrice": 30000,
+     "price": 343981,
+     "discountedPrice": 343981,
+     "zoneTitle": "کلیه کشورهای جهان (به جز استرالیا، آمریکا،کانادا،چین و ژاپن)",
+     "zoneId": 2663,
+     "rescuerTitle": "Swiss Assist",
+     "rescuerIcon": "https://www.azki.com/file/public/HC/Rescuers/10.png",
+     "rescuerId": 10,
+     "durationId": 2,
+     "durationTitle": "8 تا 15 روز",
+     "features": [
+      {
+       "icon": "POSITIVE",
+       "title": "سقف خسارت پرداختی 30,000 یورو",
+       "newRelease": null,
+       "description": "سقف خسارت پرداختی 30,000 یورو"
+      },
+      {
+       "icon": "POSITIVE",
+       "title": "جبران خسارت گم شدن چمدان و مدارک",
+       "newRelease": null,
+       "description": "در صورت گم شدن چمدان و صدور مجدد مدارک مفقوده، جبران خسارت برای هر کدام تا سقف ۲۰۰ یورو قابل پرداخت است."
+      }
+     ],
+     "badges": [],
+     "priceDataDTO": {
+      "issueType": "OFFLINE",
+      "offlineData": {
+       "priceRuleIds": [
+        962407382
+       ],
+       "passengerAges": [
+        {
+         "id": 2,
+         "title": "13 تا 65 سال"
+        }
+       ],
+       "countries": [
+        {
+         "id": 6,
+         "title": "آلمان",
+         "englishTitle": "Germany"
+        }
+       ],
+       "rescuerId": null,
+       "durationId": 2
+      },
+      "onlineData": null,
+      "taxOperation": false
+     }
+    },
+    {
+     "covers": [],
+     "coverTotalPrice": 50000,
+     "price": 400232,
+     "discountedPrice": 400232,
+     "zoneTitle": "کلیه کشورهای جهان (به جز استرالیا، آمریکا،کانادا،چین و ژاپن)\t",
+     "zoneId": 2661,
+     "rescuerTitle": "Swiss Assist",
+     "rescuerIcon": "https://www.azki.com/file/public/HC/Rescuers/10.png",
+     "rescuerId": 10,
+     "durationId": 2,
+     "durationTitle": "8 تا 15 روز",
+     "features": [
+      {
+       "icon": "POSITIVE",
+       "title": "سقف خسارت پرداختی 50,000 یورو",
+       "newRelease": null,
+       "description": "مجموع هزینه هایی که شرکت بیمه به شما پرداخت میکند 50,000 یورو است."
+      },
+      {
+       "icon": "POSITIVE",
+       "title": "جبران خسارت گم شدن چمدان و مدارک",
+       "newRelease": null,
+       "description": "در صورت گم شدن چمدان و صدور مجدد مدارک مفقوده، جبران خسارت برای هر کدام تا سقف ۲۰۰ یورو قابل پرداخت است."
+      }
+     ],
+     "badges": [],
+     "priceDataDTO": {
+      "issueType": "OFFLINE",
+      "offlineData": {
+       "priceRuleIds": [
+        962407286
+       ],
+       "passengerAges": [
+        {
+         "id": 2,
+         "title": "13 تا 65 سال"
+        }
+       ],
+       "countries": [
+        {
+         "id": 6,
+         "title": "آلمان",
+         "englishTitle": "Germany"
+        }
+       ],
+       "rescuerId": null,
+       "durationId": 2
+      },
+      "onlineData": null,
+      "taxOperation": false
+     }
+    }
+   ]
+  }
+ ]
+}

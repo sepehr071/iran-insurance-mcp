@@ -1,0 +1,102 @@
+{
+ "data": [
+  {
+   "_id": "60a1223876cab122320acd62",
+   "title": "بیمه آسانسور",
+   "landingUrl": "elevator",
+   "insureType": 85,
+   "isActive": true,
+   "isCompare": true,
+   "updated_at": "2026-04-28T15:01:59.983000Z",
+   "created_at": "2021-05-16T13:46:32.957000Z",
+   "logo": null,
+   "categoryId": "4",
+   "hasCompare": false,
+   "formId": "6580698aa41a76b7d309c9e2",
+   "isB2b": false
+  },
+  {
+   "_id": "60f2bbc06071ff5ef8b4f612",
+   "title": "بیمه حوادث انفرادی",
+   "landingUrl": "individual-event",
+   "insureType": 86,
+   "isActive": true,
+   "isCompare": true,
+   "categoryId": "2",
+   "updated_at": "2026-01-07T11:32:57.305000Z",
+   "created_at": "2021-06-09T06:43:54.620000Z",
+   "logo": null,
+   "hasCompare": false,
+   "formId": "658069c13baacaadc805da83",
+   "insuranceCountQuestionId": "658069c2fe084df945082673"
+  },
+  {
+   "_id": "6181051a54592963e2711510",
+   "title": "بیمه آتش سوزی پکیجی",
+   "landingUrl": "fire-insurance",
+   "insureType": 50,
+   "isActive": true,
+   "isCompare": false,
+   "categoryId": "3",
+   "updated_at": "2026-01-07T11:33:17.577000Z",
+   "created_at": "2021-11-02T09:30:02.137000Z",
+   "logo": null,
+   "formId": "658069d7b6522a17520d8d54",
+   "hasCompare": false
+  },
+  {
+   "_id": "61d17b7d5ac51302273f155b",
+   "title": "بیمه آتش سوزی اداری و تجاری",
+   "landingUrl": "business-fire",
+   "insureType": 88,
+   "isActive": true,
+   "isCompare": true,
+   "categoryId": "3",
+   "updated_at": "2026-01-07T11:33:09.583000Z",
+   "created_at": "2022-01-02T10:16:29.198000Z",
+   "logo": null,
+   "formId": "658069e9ae57cac5f70c9a13",
+   "hasCompare": false
+  },
+  {
+   "_id": "61ded622caa21626ef6b7e6e",
+   "title": "بیمه مسافرت داخلی",
+   "landingUrl": "internal-travel-insurance",
+   "insureType": 89,
+   "isActive": true,
+   "categoryId": "2",
+   "updated_at": "2026-01-07T11:33:26.588000Z",
+   "created_at": "2022-01-12T13:22:42.398000Z",
+   "isCompare": true,
+   "logo": null,
+   "formId": "65806a02631b786d25010a7e",
+   "hasCompare": false,
+   "insuranceCountQuestionId": "65806a02bbc8b89a470f16d4"
+  },
+  {
+   "_id": "62971e17d22bd061a61512a8",
+   "title": "بیمه عمر و سرمایه گذاری",
+   "landingUrl": "life-insurance-package",
+   "insureType": 90,
+   "isActive": true,
+   "isCompare": true,
+   "categoryId": 5,
+   "updated_at": "2026-05-02T13:22:58.255000Z",
+   "created_at": "2022-06-01T08:06:47.637000Z",
+   "logo": null,
+   "hasCompare": true,
+   "formId": "65806a113108126ac706bdd3",
+   "isB2b": false
+  }
+ ],
+ "meta": {
+  "page": 1,
+  "per_page": 200,
+  "total": 30,
+  "first_page": "/api/products?per_page=200&page=1",
+  "prev_page": "/api/products?per_page=200&page=1",
+  "current_page": "/api/products?per_page=200&page=1",
+  "next_page": "/api/products?per_page=200&page=1",
+  "last_page": "/api/products?per_page=200&page=1"
+ }
+}

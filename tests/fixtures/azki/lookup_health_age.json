@@ -1,0 +1,37 @@
+{
+ "messageCode": 200,
+ "message": "لیست بازه های سنی درمان تکمیلی انفرادی و خانواده",
+ "result": [
+  {
+   "id": 1,
+   "title": "0 تا 15",
+   "minAge": 0,
+   "maxAge": 15
+  },
+  {
+   "id": 2,
+   "title": "16 تا 45",
+   "minAge": 16,
+   "maxAge": 45
+  },
+  {
+   "id": 3,
+   "title": "51 تا 60",
+   "minAge": 51,
+   "maxAge": 60
+  },
+  {
+   "id": 4,
+   "title": "61 تا 70",
+   "minAge": 61,
+   "maxAge": 70
+  },
+  {
+   "id": 8,
+   "title": "46 تا 50",
+   "minAge": 46,
+   "maxAge": 50
+  }
+ ],
+ "success": true
+}
