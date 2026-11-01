@@ -1,12 +1,27 @@
 <!-- mcp-name: io.github.sepehr071/iran-insurance-mcp -->
 
-# iran-insurance-mcp: Iran insurance MCP server for AI agents (BimeBazar + Azki)
+<div align="center">
 
-**iran-insurance-mcp is an unofficial, read-only MCP server that gives AI agents the public insurance data of two Iranian marketplaces, BimeBazar (bimebazar.com) and Azki (azki.com), and shows both side by side.**<br>
-Its 18 tools compare insurers and ratings, look up vehicles and places, compare live travel prices from both sites in one call, read guides and FAQs, and quote third-party, motorcycle, car body, fire and supplementary health insurance (BimeBazar), estimate a car's value and list body covers (Azki).
-No API key or account is needed. It works in Claude, Cursor, Copilot and any other MCP client.
+<img src="https://raw.githubusercontent.com/sepehr071/iran-insurance-mcp/main/.github/banner.png" alt="iran-insurance-mcp: unofficial Iran insurance (بیمه) MCP server that compares BimeBazar and Azki insurers, ratings and live prices for Claude, Cursor and Copilot" width="100%">
 
-[For AI agents](#for-ai-agents) · [Quick start](#quick-start) · [Tools](#tools) · [Limits](#limits)
+# iran-insurance-mcp: Iran insurance (بیمه) MCP server for AI agents, BimeBazar + Azki
+
+**iran-insurance-mcp is an unofficial, read-only MCP server that lets an AI agent compare Iranian insurance on two marketplaces, BimeBazar (بیمه‌بازار, bimebazar.com) and Azki (ازکی, azki.com), side by side.**<br>
+Its 18 tools rank insurers by rating, compare live travel insurance prices from both sites in one call, and quote third-party car insurance (بیمه شخص ثالث), car body (بیمه بدنه), motorcycle, fire (آتش‌سوزی) and supplementary health (بیمه تکمیلی) on BimeBazar.<br>
+No API key or account is needed; it works in Claude, Cursor, Copilot and any other MCP client.
+
+[![PyPI](https://img.shields.io/pypi/v/iran-insurance-mcp?color=2563eb)](https://pypi.org/project/iran-insurance-mcp/)
+[![Python](https://img.shields.io/pypi/pyversions/iran-insurance-mcp)](https://pypi.org/project/iran-insurance-mcp/)
+[![CI](https://github.com/sepehr071/iran-insurance-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/sepehr071/iran-insurance-mcp/actions/workflows/ci.yml)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.sepehr071%2Firan--insurance--mcp-7c3aed)](https://registry.modelcontextprotocol.io/?q=iran-insurance-mcp)
+[![License: MIT](https://img.shields.io/badge/license-MIT-16a34a)](https://github.com/sepehr071/iran-insurance-mcp/blob/main/LICENSE)
+
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_iran--insurance--mcp-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=iran-insurance&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22iran-insurance-mcp%22%5D%7D)
+[![Install in Cursor](https://img.shields.io/badge/Cursor-Install_iran--insurance--mcp-000000?style=flat-square&logo=cursor&logoColor=white)](https://cursor.com/install-mcp?name=iran-insurance&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyJpcmFuLWluc3VyYW5jZS1tY3AiXX0%3D)
+
+[For AI agents](#for-ai-agents) · [Quick start](#quick-start) · [What it can do](#what-it-can-do) · [Tools](#tools) · [Limits](#limits) · [FAQ](#faq) · [فارسی](#فارسی)
+
+</div>
 
 ---
 
@@ -20,14 +35,83 @@ No API key or account is needed. It works in Claude, Cursor, Copilot and any oth
 - **Use when:** the user asks which insurer is rated best, what third-party, body, motorcycle, fire or supplementary health insurance costs, what travel insurance costs on each site, where to file a claim, or how an insurance line works.
 - **Do not use when:** the user needs a purchase, a life insurance price, or a plate/national-ID inquiry.
 - **Output:** compact JSON. Prices are Toman unless a field says otherwise, years Jalali, text Persian.
+- **Rate limit:** BimeBazar allows about 25-30 calls per minute per IP. A travel comparison uses about five calls; do not loop.
+- **Machine-readable:** [`server.json`](https://github.com/sepehr071/iran-insurance-mcp/blob/main/server.json) and the [iran-mcp catalog](https://github.com/sepehr071/iran-mcp).
+
+Last verified: 2026-11-01.
+
+## What it can do
+
+- **Compare insurers** (شرکت‌های بیمه) with each site's ratings: BimeBazar market share, satisfaction and solvency; Azki service stats and customer rating
+- **Compare travel insurance** (بیمه مسافرتی) prices from both sites for the same trip in one call, by country name and stay length
+- **Quote third-party car insurance** (بیمه شخص ثالث), cheapest first, with or without a previous policy (BimeBazar)
+- **Quote car body** (بیمه بدنه), **motorcycle**, **home fire** (بیمه آتش‌سوزی) and **supplementary health** (بیمه تکمیلی) for one person, several people or a family (BimeBazar)
+- **Estimate a car's market value** and list optional body covers and no-claim discount steps (Azki)
+- **Find vehicles and places**: brand and model ids from both catalogs, provinces and cities with each site's ids
+- **Read customer reviews** of insurers, find damage-claim branches by insurer and place, look up insurance and car-card terms
+- **Read guides and FAQs** of each insurance line, plus Azki's company pages, products and blog
+
+Example prompts:
+
+- "Compare Iranian car insurance prices from an AI agent: which insurer is cheapest for third-party insurance on a Peugeot 206?"
+- "Compare travel insurance for Turkey for 7 days on BimeBazar and Azki."
+- "Which Iranian insurance company has the best customer satisfaction and claim payment?"
+- "Where can I file a car damage claim with this insurer in Tehran?"
+- <span dir="rtl">ارزان‌ترین بیمه شخص ثالث برای پژو ۲۰۶ کدام شرکت است؟</span>
+- <span dir="rtl">قیمت بیمه مسافرتی ترکیه برای ۷ روز در بیمه‌بازار و ازکی را مقایسه کن.</span>
+- <span dir="rtl">کدام شرکت بیمه بیشترین رضایت مشتری را دارد؟</span>
 
 ## Quick start
+
+You need [uv](https://docs.astral.sh/uv/getting-started/installation/). No API key or account.
+
+<details open>
+<summary><b>Claude Code</b></summary>
 
 ```bash
 claude mcp add iran-insurance -- uvx iran-insurance-mcp
 ```
+</details>
 
-Other clients: command `uvx`, args `["iran-insurance-mcp"]`.
+<details>
+<summary><b>Claude Desktop</b></summary>
+
+Settings → Developer → Edit Config, then add:
+
+```json
+{
+  "mcpServers": {
+    "iran-insurance": { "command": "uvx", "args": ["iran-insurance-mcp"] }
+  }
+}
+```
+</details>
+
+<details>
+<summary><b>Cursor</b></summary>
+
+Click **Install in Cursor** above, or add the Claude Desktop block to `~/.cursor/mcp.json` (or `.cursor/mcp.json` in a project).
+</details>
+
+<details>
+<summary><b>VS Code (Copilot agent mode)</b></summary>
+
+Click **Install in VS Code** above, or add to `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "iran-insurance": { "type": "stdio", "command": "uvx", "args": ["iran-insurance-mcp"] }
+  }
+}
+```
+</details>
+
+<details>
+<summary><b>Anything else</b></summary>
+
+It is a standard stdio MCP server: run `uvx iran-insurance-mcp`, or `pip install iran-insurance-mcp` and run `iran-insurance-mcp`.
+</details>
 
 ## Tools
 
@@ -77,13 +161,123 @@ Migrating from the single-site servers: `bb_insurers`/`az_companies` -> `ins_ins
 - Quotes are estimates for comparison; the price to pay is shown only when buying on the site. Unofficial: not affiliated with either site. Site and blog text is third-party content.
 - Both sites sit behind Iranian CDNs; from abroad set `IRAN_INSURANCE_MCP_PROXY` to a proxy that works, or run from Iran. The server ignores system proxy variables on purpose.
 
+## FAQ
+
+<details>
+<summary><b>How can an AI agent compare Iranian car insurance prices?</b></summary>
+
+Add `iran-insurance-mcp`, then ask in plain language. The agent finds the vehicle with `ins_vehicles`, then calls `ins_quote_third_party` (or `ins_quote_car_body`), which returns every insurer's live BimeBazar price, cheapest first. Azki's car prices are not public without a phone number, so they are not included.
+</details>
+
+<details>
+<summary><b>What is the difference between BimeBazar and Azki?</b></summary>
+
+Both are Iranian online insurance marketplaces (بیمه‌بازار and ازکی) that list the same insurers. BimeBazar shows live prices for third-party, body, motorcycle, fire and supplementary health without login; Azki shows them only after a phone number, but shows travel prices, car value estimates and company ratings. This server merges what each shows publicly.
+</details>
+
+<details>
+<summary><b>How do I compare travel insurance (بیمه مسافرتی) prices?</b></summary>
+
+Call `ins_quote_travel` with the country names and the stay length. It resolves each site's ids itself and returns both sites' offers for the same trip, so one call replaces about five.
+</details>
+
+<details>
+<summary><b>Which Iranian insurance company is the best?</b></summary>
+
+`ins_insurers` returns BimeBazar's market share, satisfaction and solvency and Azki's service stats and customer rating, and `ins_insurer_reviews` returns customer reviews. The server reports the numbers; it does not pick a winner for you.
+</details>
+
+<details>
+<summary><b>Can it buy insurance or file a claim?</b></summary>
+
+No. It is read-only, cannot log in or pay, and never asks for a national ID, phone number or plate. `ins_claim_centers` only lists where to file a claim.
+</details>
+
+<details>
+<summary><b>Does it work outside Iran?</b></summary>
+
+Both sites sit behind Iranian CDNs. From abroad set `IRAN_INSURANCE_MCP_PROXY` to an HTTP proxy that reaches them, or run it from Iran.
+</details>
+
+<details>
+<summary><b>Is the price final?</b></summary>
+
+No. Quotes are estimates for comparison; the price to pay is shown only when buying on the site.
+</details>
+
+<details>
+<summary><b>How do I debug what the agent sees?</b></summary>
+
+```bash
+npx @modelcontextprotocol/inspector uvx iran-insurance-mcp
+```
+</details>
+
+## Configuration
+
+| Variable | Default | Meaning |
+|---|---|---|
+| `IRAN_INSURANCE_MCP_PROXY` | unset | Optional HTTP proxy URL for BimeBazar and Azki requests; system proxy settings are ignored. A comma-separated list is used one at a time: the next proxy takes over when one is blocked or cannot connect |
+
+<a id="فارسی"></a>
+
+## فارسی: سرور MCP بیمه برای دستیار هوش مصنوعی
+
+<div dir="rtl">
+
+پروژه **iran-insurance-mcp** یک سرور MCP غیررسمی و فقط‌خواندنی برای مقایسه بیمه در دو بازارگاه ایرانی است: بیمه‌بازار (bimebazar.com) و ازکی (azki.com). با آن، دستیار هوش مصنوعی شما (Claude، Cursor، Copilot و ...) شرکت‌های بیمه و امتیاز آن‌ها را مقایسه می‌کند، قیمت بیمه مسافرتی را از هر دو سایت یک‌جا می‌گیرد و قیمت بیمه شخص ثالث، بدنه، موتورسیکلت، آتش‌سوزی و تکمیلی را از بیمه‌بازار می‌آورد.
+
+**نکته‌ها**
+
+- فقط می‌خواند؛ نمی‌خرد، پرداخت نمی‌کند و کد ملی، شماره تلفن یا پلاک نمی‌خواهد.
+- ازکی قیمت بیمه خودرو، درمان و آتش‌سوزی را بدون شماره تلفن نشان نمی‌دهد، پس این قیمت‌ها فقط از بیمه‌بازار می‌آید.
+- قیمت‌ها تومان و تاریخ‌ها شمسی است. قیمت نهایی را فقط هنگام خرید در سایت می‌بینید.
+- بیمه‌بازار حدود ۲۵ تا ۳۰ درخواست در دقیقه را برای هر IP می‌پذیرد.
+- کلید API لازم نیست و سرور روی سیستم خود شما اجرا می‌شود. از خارج از ایران ممکن است لازم باشد `IRAN_INSURANCE_MCP_PROXY` را تنظیم کنید.
+
+**نصب** (اول [uv](https://docs.astral.sh/uv/getting-started/installation/) را نصب کنید). در Claude Code:
+
+</div>
+
+```bash
+claude mcp add iran-insurance -- uvx iran-insurance-mcp
+```
+
+<div dir="rtl">
+
+در Claude Desktop، Cursor و بقیه برنامه‌ها همان تنظیم بخش [Quick start](#quick-start) را بگذارید.
+
+</div>
+
 ## Development
 
 ```bash
+git clone https://github.com/sepehr071/iran-insurance-mcp && cd iran-insurance-mcp
 uv sync
 uv run ruff check . && uv run ruff format --check .
-uv run python -m pytest -q
-uv run python -m pytest -m live -q
+uv run python -m pytest -q          # offline unit tests on recorded fixtures
+uv run python -m pytest -m live -q  # live calls to BimeBazar and Azki (few, mind the rate limit)
 ```
 
-MIT license.
+Issues and PRs are welcome. Releases: bump the version in `pyproject.toml` and `server.json`, then push a `v*` tag; GitHub Actions publishes to PyPI.
+
+## Related servers
+
+- [codal-mcp](https://github.com/sepehr071/codal-mcp) for Codal disclosures and financial statements of Iranian listed companies
+- [tsetmc-mcp](https://github.com/sepehr071/tsetmc-mcp) for Tehran Stock Exchange prices, order book and indices
+- [iran-gold-mcp](https://github.com/sepehr071/iran-gold-mcp) for live 18k gold prices on Iranian platforms
+- [iran-mcp](https://github.com/sepehr071/iran-mcp): catalog of all Iranian-service MCP servers
+
+## Disclaimer
+
+Unofficial and not affiliated with or endorsed by BimeBazar or Azki. It is read-only and uses the public API and pages of those sites, which can change without notice. Data is informational and quotes are estimates; nothing here is insurance or financial advice.
+
+## Author
+
+<a href="https://www.linkedin.com/in/sepehr-radmard"><img src="https://raw.githubusercontent.com/sepehr071/iran-mcp/main/assets/author-banner.png" alt="Sepehr Radmard: open-source MCP servers for the Iranian web. LinkedIn: linkedin.com/in/sepehr-radmard" width="100%"></a>
+
+Built and maintained by **Sepehr Radmard** (سپهر رادمرد). Connect on [LinkedIn](https://www.linkedin.com/in/sepehr-radmard) or follow [@sepehr071 on GitHub](https://github.com/sepehr071) for more MCP servers for Iranian websites, all listed in [iran-mcp](https://github.com/sepehr071/iran-mcp). If this saves you time, a star on the repo helps other people find it.
+
+## License
+
+[MIT](https://github.com/sepehr071/iran-insurance-mcp/blob/main/LICENSE)

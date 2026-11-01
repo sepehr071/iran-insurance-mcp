@@ -7,10 +7,11 @@ license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Sepehr Radmard", email = "sepehrr80@gmail.com" }]
 requires-python = ">=3.10"
-keywords = ["mcp", "model-context-protocol", "bimebazar", "azki", "insurance", "third-party-insurance", "car-insurance", "travel-insurance", "iran", "claude", "persian"]
+keywords = ["mcp", "model-context-protocol", "bimebazar", "azki", "insurance", "third-party-insurance", "car-insurance", "travel-insurance", "iran", "claude", "persian", "farsi", "iran-insurance", "bimeh", "motorcycle-insurance", "health-insurance", "fire-insurance", "insurance-comparison", "ai-agents", "mcp-server"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
@@ -28,6 +29,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/sepehr071/iran-insurance-mcp"
+Repository = "https://github.com/sepehr071/iran-insurance-mcp"
 Issues = "https://github.com/sepehr071/iran-insurance-mcp/issues"
 Website = "https://mcpfarsi.ir/"
 
