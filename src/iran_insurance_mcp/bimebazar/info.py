@@ -64,7 +64,11 @@ async def ins_insurer_reviews(
     BimeBazar only. Use after ins_insurers to judge one insurer beyond its summary scores. Ratings are response
     quality, ease of payment, damage payout and response time. Reviewer names are left out.
     """
-    q = {"ordering": "-id" if order == "newest" else "id", "page": page, "company__url_name": company}
+    q = {
+        "ordering": "-created_date" if order == "newest" else "created_date",
+        "page": page,
+        "company__url_name": company,
+    }
     d = (await fetch("/insurance_api/company-comments/", {k: v for k, v in q.items() if v})).get("data") or {}
     keys = (
         "company",
@@ -215,8 +219,15 @@ async def ins_glossary(
     Each entry says where to find the number on the vehicle card when relevant.
     """
     terms = await fetch("/api/wiki/", ttl=CACHE_LONG)
+    if any(not t.get("name") for t in terms):  # insurer agency-code rows carry no name, only 'asia-ins'
+        cs = (await fetch("/insurance_api/insurance-companies/", ttl=CACHE_LONG))["data"]["companies"]
+        insurers = {c["url_name"]: c["name"] for c in cs}
+        for t in terms:
+            n = insurers.get((t.get("keyword") or "").removesuffix("-ins"))
+            if not t.get("name") and n:
+                t["name"] = f"بیمه {n}"
     found = [
-        {"term": t["name"], "key": t["keyword"], "explanation": _text(t.get("description"))}
+        {"term": t["name"] or t["keyword"], "key": t["keyword"], "explanation": _text(t.get("description"))}
         for t in terms
         if _has(query, t.get("name"), t.get("keyword"), t.get("description"))
     ]

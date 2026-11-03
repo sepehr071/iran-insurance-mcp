@@ -191,7 +191,7 @@ async def test_health_individual_and_family_keys(client, api):
 async def test_reviews_drop_names(client, api):
     api["/insurance_api/company-comments/"] = fixture("reviews.json")
     r = (await client.call_tool("ins_insurer_reviews", {"company": "iran", "page": 2})).structured_content
-    assert ("company__url_name", "iran") in q(api.calls[-1]) and ("ordering", "-id") in q(api.calls[-1])
+    assert ("company__url_name", "iran") in q(api.calls[-1]) and ("ordering", "-created_date") in q(api.calls[-1])
     assert r["total"] == 316 and r["reviews"][0]["response_quality_rate"] and "name" not in r["reviews"][0]
 
 
