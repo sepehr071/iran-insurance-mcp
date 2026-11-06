@@ -54,15 +54,15 @@ async def insurers() -> dict[str, Any]:
 async def ins_insurer_reviews(
     company: Annotated[
         str | None,
-        Field(description="Insurer url_name from ins_insurers (BimeBazar side), e.g. 'iran'. Omit for all insurers."),
+        Field(description="Insurer url_name from ins_insurers, e.g. 'iran'. Omit for all."),
     ] = None,
     order: Annotated[Literal["newest", "oldest"], Field(description="Review order.")] = "newest",
     page: Annotated[int, Field(description="1-based page, 20 reviews each.", ge=1, le=200)] = 1,
 ) -> dict[str, Any]:
     """Read BimeBazar customer reviews of insurers: four 1-5 ratings and the text, newest first.
 
-    BimeBazar only. Use after ins_insurers to judge one insurer beyond its summary scores. Ratings are response
-    quality, ease of payment, damage payout and response time. Reviewer names are left out.
+    BimeBazar only. Use after ins_insurers to judge one insurer. Ratings: response quality, ease of payment, damage
+    payout, response time.
     """
     q = {
         "ordering": "-created_date" if order == "newest" else "created_date",
@@ -84,28 +84,24 @@ async def ins_insurer_reviews(
     return {
         "total": d.get("count"),
         "page": page,
-        "reviews": [{k: r.get(k) for k in keys} for r in d.get("results") or []],
+        "reviews": [{k: r.get(k) or None for k in keys} for r in d.get("results") or []],
     }
 
 
 @tool("Find insurer claim centers")
 async def ins_claim_centers(
-    company: Annotated[
-        str | None, Field(description="Insurer url_name from ins_insurers (BimeBazar side), e.g. 'iran'.")
-    ] = None,
-    province: Annotated[
-        str | None, Field(description="Province value from ins_places (BimeBazar side), e.g. 'tehran'.")
-    ] = None,
-    city: Annotated[str | None, Field(description="City value from ins_places (BimeBazar side), e.g. 'karaj'.")] = None,
+    company: Annotated[str | None, Field(description="Insurer url_name from ins_insurers, e.g. 'iran'.")] = None,
+    province: Annotated[str | None, Field(description="Province value from ins_places, e.g. 'tehran'.")] = None,
+    city: Annotated[str | None, Field(description="City value from ins_places, e.g. 'karaj'.")] = None,
     service: Annotated[
         Literal["thirdparty_life", "thirdparty_financial", "carbody"] | None,
-        Field(description="Claim type the branch handles: third-party injury, third-party property, car body."),
+        Field(description="Claim type: third-party injury, third-party property, car body."),
     ] = None,
     page: Annotated[int, Field(description="1-based page, 5 centers each.", ge=1, le=200)] = 1,
 ) -> dict[str, Any]:
     """Find insurers' damage-claim branches with address, phone numbers and map position, filtered by insurer, place and claim type.
 
-    BimeBazar only; Azki has no such list. Get the insurer and place values from ins_insurers and ins_places first. Check `total` against 5 per page; the site lists every insurer's branches, not only the ones BimeBazar sells.
+    BimeBazar only. Get insurer and place values from ins_insurers and ins_places first. Check `total` against 5 per page.
     """
     q = {"company": company, "province": province, "city": city, "field_of_activity": service, "page": page}
     d = (await fetch("/insurance_api/insurance-damage-centers/", {k: v for k, v in q.items() if v})).get("data") or {}
@@ -209,14 +205,11 @@ async def faq(
 
 @tool("Look up insurance terms")
 async def ins_glossary(
-    query: Annotated[
-        str | None, Field(description="Part of a term or its explanation, Persian or Latin, e.g. 'شاسی', 'vin'.")
-    ] = None,
+    query: Annotated[str | None, Field(description="Term part, Persian or Latin, e.g. 'شاسی', 'vin'.")] = None,
 ) -> dict[str, Any]:
     """Look up short explanations of insurance and car-card terms (VIN, chassis number, liability cover and more).
 
-    BimeBazar only. Use to explain a form field or a term in a quote (ins_quote_third_party and the other quote tools).
-    Each entry says where to find the number on the vehicle card when relevant.
+    BimeBazar only. Use to explain a form field or a term in a quote.
     """
     terms = await fetch("/api/wiki/", ttl=CACHE_LONG)
     if any(not t.get("name") for t in terms):  # insurer agency-code rows carry no name, only 'asia-ins'

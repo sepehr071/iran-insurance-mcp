@@ -51,14 +51,12 @@ LookupName = Literal[
 
 @tool("List Azki insurance products")
 async def ins_azki_products(
-    query: Annotated[str | None, Field(description="Part of a Persian product title to filter by, e.g. 'عمر'.")] = None,
+    query: Annotated[str | None, Field(description="Persian product title part, e.g. 'عمر'.")] = None,
 ) -> dict[str, Any]:
     """List the insurance products Azki sells through its generic product engine (30 types such as life, elevator, fire).
 
-    Car (third-party, body), motorcycle, travel and health insurance have their own flows and are not in this list.
-    Azki only. Use it to see what else Azki sells beyond the quote tools; for a product's guide text call
-    ins_content, for a company's own page ins_azki_company. `slug` is the landing_url used on
-    azki.com/nano-product/<slug>; `insure_type` is Azki's numeric product type.
+    Azki only. Car, motorcycle, travel and health have their own flows and are not listed. `slug` is the
+    azki.com/nano-product/<slug> landing; `insure_type` is Azki's numeric type.
     """
     r = await fetch("/api/nano/api/products", {"per_page": 200}, ttl=CACHE_LONG)
     q = norm(query or "")
@@ -177,15 +175,15 @@ async def vehicles(
 
 @tool("Estimate a car's market value")
 async def ins_azki_car_value(
-    vehicle_id: Annotated[int, Field(description="Azki model id from ins_vehicles (the azki side).", ge=1)],
-    year: Annotated[int, Field(description="Build year, Jalali, e.g. 1398.", ge=1300, le=1500)],
-    zero_km: Annotated[bool, Field(description="True for a brand-new, zero-kilometre car.")] = False,
+    vehicle_id: Annotated[int, Field(description="Azki model id from ins_vehicles.", ge=1)],
+    year: Annotated[int, Field(description="Build year, Jalali.", ge=1300, le=1500)],
+    zero_km: Annotated[bool, Field(description="Brand-new zero-km car.")] = False,
 ) -> dict[str, Any]:
     """Estimate a car's market value the way Azki does before pricing body insurance.
 
-    Azki only. Call ins_vehicles first for the model id. Use the result as car_value for ins_quote_car_body or as
-    vehicle_price for ins_azki_body_options. Returns the average, lower and upper price in Toman from a price provider
-    (Khodro45 at the time of writing). A model or year without an estimate gives an error; then ask the user for the value.
+    Azki only. Call ins_vehicles first for the model id. Use the result as car_value (ins_quote_car_body) or
+    vehicle_price (ins_azki_body_options). Returns average, lower and upper price in Toman; if no estimate exists,
+    ask the user for the value.
     """
     try:
         r = await fetch(
@@ -228,16 +226,14 @@ async def lookup(
 @tool("Get Azki body insurance covers and discounts")
 async def ins_azki_body_options(
     company_id: Annotated[
-        int, Field(description="Azki company id from ins_insurers with provider='azki', azki_kind='body'.", ge=1)
+        int, Field(description="Azki id from ins_insurers (provider='azki', azki_kind='body').", ge=1)
     ],
-    vehicle_price: Annotated[int, Field(description="Car value in Toman, e.g. from ins_azki_car_value.", ge=1)],
+    vehicle_price: Annotated[int, Field(description="Car value in Toman.", ge=1)],
 ) -> dict[str, Any]:
     """List the optional covers and no-claim discount steps one company offers for car body insurance.
 
-    Azki only. Use it to explain what a body policy can include and which no-claim discount steps exist; for actual
-    body prices call ins_quote_car_body (BimeBazar). This is what the body-insurance form shows after the car value.
-    It does not price a policy: Azki asks for a phone
-    number before showing prices, so no premium can be read here. Choices marked disabled are left out.
+    Azki only. Explains what a body policy can include and the no-claim discount steps. It does not price a policy
+    (Azki needs a phone number); use ins_quote_car_body for prices.
     """
     covers, discounts = await asyncio.gather(
         fetch(f"/api/product/body/covers/{company_id}", {"vehiclePrice": vehicle_price}),
